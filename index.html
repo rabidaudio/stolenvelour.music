@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Stolen Velour</title>
+
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="sad girl slowcore / grungy lovewave" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://cdn.jsdelivr.net/npm/modern-normalize@v2.0.0/modern-normalize.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Montserrat:wght@400..500&display=swap"
+    rel="stylesheet">
+
+  <!-- <link rel="icon" href="favicon.png"> -->
+
+  <meta property="og:title" content="Stolen Velour" />
+  <meta property="og:description" content="sad girl slowcore / grungy lovewave" />
+
+  <style>
+    /* BASE STYLES */
+    :root {
+      --body-background: #ffffff;
+      --body-color: #5a5a5a;
+      --accent-color: #67C8CA;
+      --link-color: #C45D7D;
+      --on-accent-color: #fff;
+      --alternate-background-light: #f8f9fa;
+      --color-primary: var(--accent-color);
+      --color-success: #67C8CA;
+      --color-secondary: #C45D7D;
+      --font-family: Montserrat, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --font-family-mono: "Cutive Mono", monospace;
+    }
+
+    body {
+      background: var(--body-background);
+      color: var(--body-color);
+      margin: 0;
+      min-width: 320px;
+      font-family: var(--font-family);
+      font-weight: 400;
+    }
+
+    a {
+      color: var(--link-color);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: 500;
+    }
+
+    pre,
+    code {
+      font-family: var(--font-family-mono);
+    }
+
+    /* PAGE CONTENT */
+
+    .avatar {
+      margin: auto;
+      max-width: 150px;
+    }
+
+    .avatar img {
+      width: 100%;
+      border-radius: 50%;
+    }
+
+    .content {
+      text-align: center;
+      max-width: 1200px;
+      min-width: 320px;
+      margin: auto;
+      padding: 0 3em;
+    }
+
+
+    @media screen and (max-width: 650px) {
+      .content {
+        padding: 0 15px;
+      }
+    }
+
+
+    footer {
+      text-align: center;
+      font-size: 0.8em;
+      padding: 2em 0 1em 0;
+    }
+
+    .heart {
+      font-size: inherit;
+      color: var(--link-color);
+      vertical-align: sub;
+    }
+
+    /* LINKS */
+
+    .link-group {
+      text-align: center;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      max-width: 100%;
+    }
+
+    .link {
+      line-height: 2em;
+      margin: 20px;
+      border: 1px solid var(--accent-color);
+      border-radius: 5px;
+      padding: 15px;
+      transition: all 0.2s;
+
+      flex-basis: 100%;
+      flex-grow: 1;
+    }
+
+    .link.clickable:hover {
+      background-color: var(--accent-color);
+      color: var(--on-accent-color);
+    }
+
+    .title {
+      color: var(--accent-color);
+      font-size: 1em;
+    }
+
+    .link-group a {
+      text-decoration: none;
+    }
+
+    .link .url,
+    .link .copyable {
+      display: block;
+      color: var(--color-secondary);
+      font-size: 1.2em;
+    }
+
+    @media screen and (max-width: 650px) {
+      .link .url,
+      .link .copyable {
+        font-size: 0.8em;
+      }
+    }
+
+    .link.clickable:hover .title,
+    .link.clickable:hover .url,
+    .link.clickable:hover .copyable {
+      color: var(--on-accent-color);
+    }
+
+    .copyable {
+      margin: auto;
+    }
+
+    .copyable input,
+    .copy-btn {
+      font-size: 1em;
+    }
+
+    .copyable input {
+      display: inline;
+      background-color: inherit;
+      border: none;
+      font-family: var(--font-family-mono);
+      color: var(--color-secondary);
+    }
+
+    .copyable input:focus-visible {
+      outline: none;
+    }
+
+    .link .url,
+    .link .copyable input {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      /* make ellipsis start at front */
+      direction: rtl;
+      max-width: 70vw;
+      margin: auto;
+    }
+
+    .copyable,
+    .copyable input {
+      cursor: copy;
+    }
+
+    .copy-btn {
+      vertical-align: middle;
+      opacity: 0.8;
+      transition: opacity 0.2s;     
+      font-size: 0.7em; 
+    }
+
+    .copyable:hover .copy-btn {
+      opacity: 1;
+    }
+
+    .copied-alert {
+      position: absolute;
+      color: var(--color-success);
+      opacity: 0;
+      margin: 0 0.4em;
+      font-size: 0.7em;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content">
+    <h1>
+      <div class="avatar">
+        <img src="images/logo-square.png" alt="Stolen Velour" />
+      </div>
+    </h1>
+
+
+    <ul class="link-group"></ul>
+  </div>
+
+  <footer>
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1">CC-BY-SA 4.0</a>.
+    Made with <span class="material-icons heart">favorite</span> in Atlanta.
+  </footer>
+
+  <script>
+    const links = {
+        "✨ Stream our new demo: 'floorboards' ✨": "https://stolenvelouratl.bandcamp.com/track/floorboards",
+        "Bandcamp": "https://stolenvelouratl.bandcamp.com/",
+        "Instagram": "https://www.instagram.com/stolenvelouratl",
+        "Booking": "stolenvelouratl@gmail.com"
+        // Spotify
+        // Apple music
+    }
+
+    const el = document.querySelector('.link-group')
+    for (const [name, link] of Object.entries(links)) {
+      if (link.startsWith("http")) {
+        const domain = link.replace(/^https?\:\/\/(www.)?/, '')
+        el.innerHTML += `
+          <a class="link clickable" href="${link}" target="_blank">
+            <li>
+              <div class="title">${name}</div>
+            </li>
+          </a>`
+      } else {
+        el.innerHTML += `
+          <li class="link">
+            <div class="title">${name}</div>
+            <div>
+              <div class="copyable">
+                <input type="text" size="${link.length}" value="${link}" readonly />
+                <span class="material-icons copy-btn">content_copy</span>
+                <span class="copied-alert">Copied!</span>
+              </div>
+            </div>
+          </li>`
+      }
+    }
+
+    // Copyable
+    window.addEventListener('DOMContentLoaded', () => {
+      for (const container of document.querySelectorAll('.copyable')) {
+        container.addEventListener('click', () => {
+          const input = container.getElementsByTagName('input')[0]
+          input.select()
+          input.setSelectionRange(0, 99999) // For mobile devices
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(input.value)
+            const alert = container.getElementsByClassName('copied-alert')[0]
+            alert.animate([
+              { 'opacity': 1 },
+              { 'opacity': 0 },
+            ], { duration: 2000 });
+          }
+        })
+      }
+    })
+  </script>
+</body>
+
+</html>
