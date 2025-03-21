@@ -23,7 +23,7 @@
   <style>
     /* BASE STYLES */
     :root {
-      --body-background: #ffffff;
+      --body-background: #67C8CA;
       --body-color: #5a5a5a;
       --accent-color: #67C8CA;
       --link-color: #C45D7D;
@@ -90,11 +90,18 @@
       }
     }
 
+    .splash img {
+      display: block;
+      width: 100%;
+      max-width: 300px;
+      margin: auto;
+    }
 
     footer {
       text-align: center;
       font-size: 0.8em;
-      padding: 2em 0 1em 0;
+      padding: 1em 0;
+      background-color: #fff;
     }
 
     .heart {
@@ -120,17 +127,18 @@
     .link {
       line-height: 2em;
       margin: 20px;
-      border: 1px solid var(--accent-color);
+      border: 1px solid var(--link-color);
       border-radius: 5px;
       padding: 15px;
       transition: all 0.2s;
+      background: #fff;
 
       flex-basis: 100%;
       flex-grow: 1;
     }
 
     .link.clickable:hover {
-      background-color: var(--accent-color);
+      background-color: var(--link-color);
       color: var(--on-accent-color);
     }
 
@@ -225,7 +233,11 @@
   <div class="content">
     <h1>
       <div class="avatar">
-        <img src="images/logo-square.png" alt="Stolen Velour" />
+        <img src="images/wall_focus_square.jpg" alt="Stolen Velour" />
+      </div>
+
+      <div class="splash">
+        <img src="images/logo-cropped.png" />
       </div>
     </h1>
 
@@ -240,7 +252,8 @@
 
   <script>
     const links = {
-        "✨ Stream our new demo: 'floorboards' ✨": "https://stolenvelouratl.bandcamp.com/track/floorboards",
+        "✨ New track: \"isredevir\" ✨": "https://stolenvelouratl.bandcamp.com/track/isredevir",
+        "Stream \"floorboards\"": "https://open.spotify.com/track/4ZO9FDOxppitx1x0YrjWE3?si=42c6a052eba14636",
         "Instagram": "https://www.instagram.com/stolenvelouratl",
         "Bandcamp": "https://stolenvelouratl.bandcamp.com/",
         "Spotify": "https://open.spotify.com/artist/22tZUwcYPRmuM3Dr2N1UoM",
